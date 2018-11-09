@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+   <div class="section">
+       <div class="container">
+           <div class="row">
+               <div class="col-12 col-md-6 event text-center">
+                   <h3 style="padding-top: 20px; padding-bottom: 20px;">Evenement N°1</h3>
+                   <img src="https://enisecurity.com.au/wp-content/uploads/2017/08/download-500x500.jpg">
+                   <p class=""><strong>Description :</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. </p>
+                   <form method="POST" action="../event.php" class="">
+                       <input type="hidden" name="id" value="1">
+                       <input type="hidden" name="name" value="Evénement 1">
+                       <input type="hidden" name="date" value="Du 27 octobre au 5 novembre">
+                       <input type="hidden" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. ">
+                       <input type="hidden" name="lien" value="https://enisecurity.com.au/wp-content/uploads/2017/08/download-500x500.jpg">
+                       <input type="submit" class="btn btn-outline-warning" value="S'inscrire">
+                   </form>
+               </div>
+               <div class="col-12 col-md-6 event text-center">
+                   <h3 style="padding-top: 20px; padding-bottom: 20px;">Evenement N°2</h3>
+                   <img src="http://www.optimosoftware.co.uk/images/content/event-management-software.jpg">
+                   <p class=""><strong>Description :</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. </p>
+                   <form method="POST" action="../event.php" class="">
+                       <input type="hidden" name="id" value="2">
+                       <input type="hidden" name="name" value="Evénement 2">
+                       <input type="hidden" name="date" value="Du 24 octobre au 1er novembre">
+                       <input type="hidden" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. ">
+                       <input type="hidden" name="lien" value="http://www.optimosoftware.co.uk/images/content/event-management-software.jpg">
+                       <input type="submit" class="btn btn-outline-warning" value="S'inscrire">
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+
+{% endblock %}

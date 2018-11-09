@@ -1,0 +1,16 @@
+.footer
+{
+    background: #424242;
+    min-height: 200px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.event
+{
+    min-height: 500px;
+    /*background: darkgrey;*/
+    border: 3px groove darkgrey;
+}
