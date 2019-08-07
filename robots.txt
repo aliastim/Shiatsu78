@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /img/icones/
+
+Sitemap: https://shiatsu78.com/sitemap.xml

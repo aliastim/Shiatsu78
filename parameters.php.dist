@@ -13,8 +13,8 @@ return [
         [
             'driver'   => 'pdo_mysql',
             'user'     => 'root',
-            'password' => 'root',
-            'dbname'   => '',
+            'password' => '',
+            'dbname'   => 'shiatsu78',
         ]
 ];
 

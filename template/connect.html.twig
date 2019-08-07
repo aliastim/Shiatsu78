@@ -2,20 +2,24 @@
 
 {% block main %}
 
-    <h1 class="text-center">Page de connexion</h1>
+    <h1 class="text-center" style="margin-bottom: 150px;">Page de connexion</h1>
 
-    <form method="post" action="../connect.php">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nom d'utilisateur</label>
-            <input type="text" class="form-control" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-            <small id="emailHelp" class="form-text text-muted">Un peu d'imagination...</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
-        </div>
+    <div class="container">
+        <form method="post" action="../connect.php">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nom d'utilisateur</label>
+                <input type="text" class="form-control input-connect" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre adresse e-mail">
+                <!--<small id="emailHelp" class="form-text text-muted">Un peu d'imagination...</small>-->
+            </div>
+            <div class="form-group" style="margin-bottom: 120px;">
+                <label for="exampleInputPassword1">Mot de passe</label>
+                <input type="password" class="form-control input-connect" name="password" id="exampleInputPassword1" placeholder="Votre mot de passe">
+            </div>
 
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
+            <div class="text-center">
+                <button type="submit" class="btn btn-connect">Envoyer</button>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

@@ -23,25 +23,13 @@ $passwordinit = isset($_POST['password']) ? $_POST['password'] : null;
 if (!empty($usernameinit) && !empty($passwordinit)) //si username et password sont différents de vide
 {
     /** @var \App\Repository\UserRepository $repo */
-    //$repo = $entityManager->getRepository(User::class);
-    //$user = $repo->loadAll(10, 0);
-    //$count    = $repo->count();
-    //$userSelect = new User();
-    //$user = $userSelect->getId(1);
 
     $repo = $entityManager->getRepository(User::class);
-    //$user = $repo->findOneBy(['id'=>1]);
     $users = $repo->findAll();
 
     foreach ($users AS $user) {
-        //$id = $user->getId();
 
-        /*
-        $username = $user->getUsername();
-        $password = $user->getPassword();
-        dump($user);*/
-
-        if ($usernameinit === $user->getMail() && $passwordinit === $user->getPassword()) {
+        if ($usernameinit === $user->getMail() && password_verify($passwordinit, $user->getPassword())) {
             echo 'connecté';
 
             $_SESSION['isConnected']= true;
@@ -53,11 +41,12 @@ if (!empty($usernameinit) && !empty($passwordinit)) //si username et password so
 
 
             //dump($_SESSION);
-            header('Location: index.php');
+            header('Location: admin_dashboard.php');
 
         } else
         {
             echo 'mauvais identifiants ';
+            header("Location:login.php");
 
 
         }
@@ -65,6 +54,9 @@ if (!empty($usernameinit) && !empty($passwordinit)) //si username et password so
        // die();
 
     }
+} else
+{
+    header("Location:login.php");
 }
 
 

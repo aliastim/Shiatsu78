@@ -14,15 +14,15 @@ require __DIR__ . "/bootstrap.php";
 if (isset($_SESSION['isConnected']))
 {
 
-    $id = $_GET['id'];
-    $username = $_GET['mail'];
-    $password = $_GET['password'];
-    $firstname = $_GET['firstname'];
-    $name = $_GET['name'];
-    $num = $_GET['num'];
+    $id = $_POST['id'];
+    $username = $_POST['mail'];
+    $password = $_POST['password'];
+    $firstname = $_POST['firstname'];
+    $name = $_POST['name'];
+    $num = $_POST['num'];
 
 
-    if (isset($_GET['id']) AND isset($_GET['mail']) AND isset($_GET['password']) AND !empty($_GET['mail']) AND !empty($_GET['password']))
+    if (isset($_POST['id']) AND isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']) AND !empty($_POST['password']))
     {
         echo $twig->render('admin_users_edit.html.twig', [
             'title' => 'Modification d\'Utilisateurs',

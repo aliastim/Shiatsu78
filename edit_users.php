@@ -13,16 +13,16 @@ require __DIR__ . "/bootstrap.php";
 
 use App\Entity\User;
 
-$id = $_GET['id'];
-$username = $_GET['username'];
-$password = $_GET['password'];
-$num = $_GET['num'];
-$name = $_GET['name'];
-$firstname = $_GET['firstname'];
+$id = $_POST['id'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$num = $_POST['num'];
+$name = $_POST['name'];
+$firstname = $_POST['firstname'];
 
-//dump($_GET);
+//dump($_POST);
 
-if (isset($_GET['id']) AND isset($_GET['password']) AND isset($_GET['username']) AND !empty($_GET['password']) AND !empty($_GET['username']))
+if (isset($_POST['id']) AND isset($_POST['password']) AND isset($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['username']))
 {
     $repo = $entityManager->getRepository(User::class);
     $users = $repo->findOneBy(['id'=>$id]);

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+    <div class="section">
+        <div class="container text-center">
+            <h2 class="titre-info-404">La page sur laquelle vous souhaitez accéder n'existe pas,<br> vous allez être redirigé vers l'accueil.</h2>
+            <h1 class="titre-404">404</h1>
+            <p class="text-404">Vous allez être redirigé dans <span id="seconds">5</span><span id="text"> secondes</span></p>
+
+            <script>
+                function countDown(){
+                    seconds--
+                    $("#seconds").text(seconds);
+                    if (seconds === 1){
+                        document.getElementById('text').innerHTML = " seconde";
+                    }
+                    if (seconds === 0){
+                        clearInterval(i);
+                    }
+                }
+
+                var seconds = 5,
+                    i = setInterval(countDown, 1000);
+            </script>
+
+        </div>
+    </div>
+
+{% endblock %}

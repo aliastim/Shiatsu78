@@ -2,37 +2,235 @@
 
 {% block main %}
 
-   <div class="section">
-       <div class="container">
-           <div class="row">
-               <div class="col-12 col-md-6 event text-center">
-                   <h3 style="padding-top: 20px; padding-bottom: 20px;">Evenement N°1</h3>
-                   <img src="https://enisecurity.com.au/wp-content/uploads/2017/08/download-500x500.jpg">
-                   <p class=""><strong>Description :</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. </p>
-                   <form method="POST" action="../event.php" class="">
-                       <input type="hidden" name="id" value="1">
-                       <input type="hidden" name="name" value="Evénement 1">
-                       <input type="hidden" name="date" value="Du 27 octobre au 5 novembre">
-                       <input type="hidden" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. ">
-                       <input type="hidden" name="lien" value="https://enisecurity.com.au/wp-content/uploads/2017/08/download-500x500.jpg">
-                       <input type="submit" class="btn btn-outline-warning" value="S'inscrire">
-                   </form>
-               </div>
-               <div class="col-12 col-md-6 event text-center">
-                   <h3 style="padding-top: 20px; padding-bottom: 20px;">Evenement N°2</h3>
-                   <img src="http://www.optimosoftware.co.uk/images/content/event-management-software.jpg">
-                   <p class=""><strong>Description :</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. </p>
-                   <form method="POST" action="../event.php" class="">
-                       <input type="hidden" name="id" value="2">
-                       <input type="hidden" name="name" value="Evénement 2">
-                       <input type="hidden" name="date" value="Du 24 octobre au 1er novembre">
-                       <input type="hidden" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur massa a augue efficitur ultrices. Aenean hendrerit arcu in lectus dapibus, eu ultrices sem interdum. Ut facilisis mauris mi, in mollis sem ornare a. Curabitur in justo neque. Nullam vel molestie eros. Ut viverra leo ligula, a eleifend ipsum semper at. Mauris sed tristique ipsum. ">
-                       <input type="hidden" name="lien" value="http://www.optimosoftware.co.uk/images/content/event-management-software.jpg">
-                       <input type="submit" class="btn btn-outline-warning" value="S'inscrire">
-                   </form>
-               </div>
-           </div>
-       </div>
-   </div>
+    <div class="section">
+        <div class="masthead">
+            <div class="masthead-left">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <h1 class="font-weight-light title-homepage">SHIATSU 78<span class="dsp-1169"> - "LA SANTÉ AUTREMENT"</span><br><span class="title-homepage-span-1">St-Léger-en-Yvelines / Maurepas</span></h1>
+                            <!--<p class="apr-1169"></p>-->
+                            <!--<p class="logo_SH">指圧</p>-->
+                            <hr class="ligne-accueil">
+                            <a href="#decouverte" class="smoothscroll">
+                                <button class="btn-home3">
+                                    <!--<p>Découvrir les bienfaits du shiatsu</p>-->
+                                    <p><i class="fas fa-yin-yang"></i>&nbsp;&nbsp;Qu'est-ce que le shiatsu ?</p>
+                                </button>
+                            </a>
+                            <div class="btn-accueil-flex">
+                                <a href="../prestations.php" class="btn-home3">
+                                    <button class="btn-home0">
+                                        <p><i class="far fa-heart"></i>&nbsp;&nbsp;Prestations</p>
+                                    </button>
+                                </a>
+                                <a href="../contact.php" class="btn-home3">
+                                    <button class="btn-home0">
+                                        <p><i class="far fa-calendar-check"></i>&nbsp;&nbsp;Prendre rendez-vous</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="scroll-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="masthead-right">
+                <div class="container">
+                </div>
+            </div>
+            <svg id="bandeau_1" data-name="bandeau_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1190.55 122.95">
+                <path class="bandeau_1" d="M1190.55,340.37c-39.59-5.43-387.81,138.47-743.34,0C286.71,277.86,109.68,301.88,0,320.69V423H1190.55V340.37Z" transform="translate(0 -300.01)"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="section" id="decouverte">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--<img src="../img/icones/ico_3.png" class="img-fluid ico-pres">-->
+                    <div class="ico-accueil-ico3 pulse-orange mx-auto"></div>
+                    <h3 class="title_ico">Bienfaits</h3>
+                    <p class="text-ico">Le Shiatsu agit à la fois sur le corps, le mental et les émotions.</p>
+                </div>
+                <div class="col-md-4">
+                    <!--<img src="../img/icones/ico_2.png" class="img-fluid ico-pres">-->
+                    <div class="ico-accueil-ico2 pulse-orange mx-auto"></div>
+                    <h3 class="title_ico">Prise en charge*</h3>
+                    <p class="text-ico">Le coût d'une séance est partiellement remboursable par <a href="#" data-toggle="modal" data-target="#mutuelles">certaines mutuelles*</a>.</p>
+                </div>
+                <div class="col-md-4">
+                    <!--<img src="../img/icones/ico_1.png" class="img-fluid ico-pres">-->
+                    <div class="ico-accueil-ico1 pulse-orange mx-auto"></div>
+                    <h3 class="title_ico">≃ 1 heure</h3>
+                    <p class="text-ico">La durée d'une séance peut varier entre 45 et 90 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-accueil" style="margin-top: 50px; position: relative; padding-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="font-weight-light Quicksand_Bold">Qu'est-ce que le <span style="color: #EE134E;">Shiatsu</span> ?</h2>
+                    <p class="Quicksand section-accueil-texte">
+                        <br>
+                        Le Shiatsu est une technique de soin d'origine japonaise basée sur les principes de la Médecine Traditionnelle Chinoise.
+                        Il régule et harmonise l'énergie qui circule dans le corps et les organes à travers le réseau des méridiens d'acupuncture.
+                        Il est reconnu depuis 1955 par le Ministère japonais de la Santé comme une médecine à part entière.<br>
+                        Le Shiatsu se pratique traditionnellement au sol, au travers des vêtements (prévoir une tenue souple et confortable en matière naturelle).
+
+                        La séance dure en moyenne 1 heure.
+                        Le Shiatsu consiste en un enchaînement d’étirements et de pressions le long des méridiens où circule l'énergie.
+                        Les pressions sont exercées principalement par les pouces du praticien. Il s'agit de traiter le corps dans sa globalité pour obtenir une harmonisation physique, mentale et émotionnelle.
+                        En fonction des besoins, plusieurs séances peuvent être nécessaires.
+
+                        Le Shiatsu ne se substitue pas à la médecine occidentale, il apporte un complément. Il ne dispense pas d’un avis médical.
+
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../img/Cabinet_shiatsu_St_leger_yvelines_seance_2.png" class="img-fluid img-accueil-round" alt="Shiatsu 78 Yvelines - Santé autrement - Myriam CORRADO">
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom :0; margin-bottom: -4px">
+            <svg id="bandeau_2" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 35.41"><polygon class="bandeau_2" points="0 35.41 1000 35.41 1000 0 0 35.41"/></svg>
+        </div>
+    </div>
+
+    <!--<svg data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 94.44"><path class="bandeau_2" d="M1000,464.59h0a1370.81,1370.81,0,0,0-1000,0H1000Z" transform="translate(0 -370.15)"/></svg>-->
+    <div class="section section-accueil section-grey text-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../img/Cabinet_shiatsu_St_léger_yvelines_2.jpg" class="img-fluid img-accueil-round" alt="Shiatsu 78 Yvelines - Santé autrement - Myriam CORRADO">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="font-weight-light Quicksand_Bold mr-30">Le <span style="color: #EE134E;">Cabinet</span> à St-Léger-en-Yvelines</h2>
+                    <p class="Quicksand_Bold  section-accueil-texte" style="">
+                        <br>
+                        Je vous reçois en consultation à la maison paramédicale "Les Bruyères Pourpres" située à Saint-Léger-en-Yvelines. Un parking est à votre disposition.<br><br>
+
+                        Pour plus d'informations, vous pouvez consulter le <a target="_blank" href="https://www.lesbruyerespourpres.com/">site internet des Bruyères Pourpres</a><br><br><br>
+                    </p>
+                    <div class="text-center">
+                        <a href="../contact.php"><button class="btn-contact-cabinet">Contact & Rendez-vous</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom :0; margin-bottom: -4px">
+            <svg id="bandeau_3" data-name="bandeau_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 35.41"><polygon class="bandeau_1" points="1000 35.41 0 35.41 0 0 1000 35.41"/></svg>
+        </div>
+    </div>
+
+
+    <div class="section section-accueil text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="font-weight-light Quicksand_Bold mr-30"><span style="color: #EE134E;">Myriam CORRADO,</span> Praticienne Shiatsu</h2>
+                    <p class="Quicksand section-accueil-texte">
+                        <br><hr class="ligne-Myriamc"><br>
+                        <strong>Diplômée de l'École de Shiatsu Thérapeutique de Paris</strong><br>
+                        Ancienne élève de l'École Wellmother (Shiatsu maternité)<br>
+                        Membre de AIST (Association Internationale de Shiatsu Traditionnel)<br>
+                        Membre de l’UFPST (Union Francophone des Professionnels de Shiatsu Thérapeutique)<br>
+
+                    </p>
+                    <img class="img-fluid logo_UFPST" src="../img/UFPST_logo.png">
+                </div>
+                <div class="col-lg-4">
+                    <img src="../img/Myriam_Corrado_therapeute_Shiatsu_2.jpg" class="img-fluid img-accueil-round" alt="Shiatsu 78 Yvelines - Santé autrement - Myriam CORRADO">
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="../img/brochure7.pdf" download="Brochure_Shiatsu78" class="btn-brochure pulse-orange">
+                    Télécharger la brochure
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modales Mutuelles-->
+    <div class="modal fade" id="mutuelles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="mutuelles-title text-center" id="exampleModalLabel">Liste (non-exhaustive) des mutuelles qui peuvent prendre en charge le Shiatsu </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: var(--orange-fonce-1);">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="liste_mutuelles">
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            ADREA
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            AGF - Allianz Santé
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            Assurances ALPTIS
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            A MA VIE
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            ASETYS
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            Groupe ASSUREMA / Contrat Vie Verte
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            BAHEMA Assurances
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            CCMO
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            COMPAGNIE DES FEMMES (LA)
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            MUTUELLE FAMILIALE D'ILE DE FRANCE (MFIF)
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            MUTUELLE DE FRANCE SAVOIE
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            MUTA GESTION
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            MUTUELLE CAPVERT
+                        </li>
+                        <li>
+                            <img src="../img/icones/check.png" class="table-check">
+                            MUTUELLE VERTE
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

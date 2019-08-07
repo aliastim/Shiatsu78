@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+    <div class="container">
+        <h1 class="text-center Quicksand_Bold">Tableau de bord</h1>
+
+        <br><br>
+
+
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Utilisateur</th>
+                <th scope="col">Commentaire</th>
+                <th scope="col">Statut</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for comment in comments %}
+
+                <tr>
+                    <th scope="row">{{ comment.id }}</th>
+                    <td>{{ comment.commenter }}</td>
+                    <td>{{ comment.text }}</td>
+                    <td>
+                        <form method="POST" action="../comment_edit.php" class="">
+                            <input type="hidden" name="id" value="{{ comment.id }}">
+                            <input type="hidden" name="page_actuelle" value="{{ currentPage }}">
+                            <div class="row">
+                                <div>
+                                    <select name="validate" class="custom-select my-1 mr-sm-2">
+                                        {%  if comment.validate == "Validé"  %}
+                                            <option value="Validé" selected>Validé</option>
+                                            <option value="Non validé">Non Validé</option>
+
+                                        {%  elseif comment.validate == "Non validé"  %}
+                                            <option value="Validé">Validé</option>
+                                            <option value="Non validé" selected>Non Validé</option>
+
+                                        {% endif %}
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="submit" class="btn btn-outline-success" style="margin-left: 5px; margin-top: 4px;" value="Valider">
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div>&nbsp;</div>
+                            <form method="POST" action="../comment_delete.php" class="">
+                                <input type="hidden" name="id" value="{{ comment.id }}">
+                                <input type="hidden" name="page_actuelle" value="{{ currentPage }}">
+                                <input type="submit" class="btn btn-outline-danger" style="margin-top: 4px;" value="Supprimer">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="?page=1">Première page</a></li>
+                <li class="page-item {% if currentPage <= 1 %} disabled {% endif %}"><a class="page-link"
+                                                                                        href="?page={{ currentPage - 1 }}">&laquo;</a>
+                </li>
+                {% for i in minPage..(currentPage - 1) if (currentPage > 1) %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endfor %}
+
+                <li class="page-item active"><a class="page-link" href="?page={{ currentPage }}">{{ currentPage }}</a>
+
+                    {% for i in (currentPage + 1)..maxPage if (currentPage < maxPagination) %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endfor %}
+                <li class="page-item {% if currentPage >= maxPagination %} disabled {% endif %}"><a class="page-link"
+                                                                                                    href="?page={{ currentPage + 1 }}">&raquo;</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="?page={{ maxPagination }}">Dernière page</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
+    </div>
+
+{% endblock %}

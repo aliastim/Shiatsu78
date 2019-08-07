@@ -2,70 +2,172 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title|default('Accueil') }}</title>
+    <title>{{ title|default('SHIATSU 78 | St Léger en Yvelines / Maurepas - "La santé autrement"') }}</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- méta de référencement -->
+    <meta name="Description" content="Le Shiatsu est une technique de soins basée sur les principes de la médecine traditionnelle chinoise. Indications courantes : Fatigue, troubles du sommeil, douleurs, convalescence, stress, gestion des émotions, soutien lors de périodes charnières, suivi de grossesse, troubles digestifs, vertiges...">
+    <meta name="Keywords" content="Shiatsu, Yvelines, 78, Myriam, Corrado, Médecine, thérapeutique, douce, Maurepas, saint, st, léger, leger, Saint-léger-en-yvelines, thérapie, naturelle, alternative, alternatif, chinoise, chinois, chiatsu, traditionnel, traditionnelle, accupuncture, méridiens, méridien, énergie, troubles, trouble, digestifs, digestif, sommeil, fatigue, dépression, migraine, hypertension, hypotension, convalescence, stress, accompagnement, chimiothérapie, soutien, fertilité, grossesse, postpartum, ménopause, douleurs, douleur, préparation, examens, examen, gestion, émotions, émotion, périodes, charnières, deuil, rupture, chômage, déménagement, vertiges, acouphènes, tensions, musculaires, corado">
+    <meta name="Subject" content='SHIATSU 78 | St Léger en Yvelines / Maurepas - La santé autrement "| Myriam Corrado'>
+    <meta name="Copyright" content="Myriam Corrado">
+    <meta name="Author" content="Myriam Corrado">
+    <meta name="Publisher" content="Myriam Corrado">
+    <meta name="Identifier-Url" content="https://www.shiatsu78.com">
+    <meta name="Reply-To" content="shiatsu.mc@gmail.com">
+    <meta name="Revisit-After" content="15 days">
+    <meta name="Robots" content="all">
+    <meta name="Rating" content="general">
+    <meta name="Distribution" content="global">
+    <meta name="Geography" content="Yvelines, France">
+    <meta name="Category" content="health">
+
+    <!-- meta Facebook -->
+    <meta property="og:title" content='SHIATSU 78 | St Léger en Yvelines / Maurepas - "La santé autrement"'>
+    <meta property="og:type" content="Santé">
+    <meta property="og:url" content="https://www.shiatsu78.com/">
+    <meta property="og:image" content="https://www.shiatsu78.com/img/Myriam_Corrado_therapeute_Shiatsu_2.jpg">
+    <meta property="og:description" content="Le Shiatsu est une technique de soins basée sur les principes de la médecine traditionnelle chinoise. Indications courantes : Fatigue, troubles du sommeil, douleurs, convalescence, stress, gestion des émotions, soutien lors de périodes charnières, suivi de grossesse, troubles digestifs, vertiges...">
+
+    <!-- meta Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Shiatsu78">
+    <meta name="twitter:title" content='SHIATSU 78 | St Léger en Yvelines / Maurepas - "La santé autrement"'>
+    <meta name="twitter:description" content="Le Shiatsu est une technique de soins basée sur les principes de la médecine traditionnelle chinoise. Indications courantes : Fatigue, troubles du sommeil, douleurs, convalescence, stress, gestion des émotions, soutien lors de périodes charnières, suivi de grossesse, troubles digestifs, vertiges...">
+    <meta name="twitter:creator" content="@Myriam_Corrado">
+    <meta name="twitter:image" content="https://www.shiatsu78.com/img/Myriam_Corrado_therapeute_Shiatsu_2.jpg">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../src/style.css">
+    <script src="https://kit.fontawesome.com/ee3464458a.js"></script>
 </head>
 <body>
 {% block body %}
 
     <header class="container">
         {% block header %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.php">Accueil</a>
+        <div class="wrapper-burger">
+
+        <div class="menu-trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-burger">
+            <ul>
+                <li>
+                    <a href="../index.php">Accueil</a>
+                </li>
+                <li>
+                    <a href="../prestations.php">Prestations</a>
+                </li>
+                <li>
+                    <a href="../contact.php">Contact</a>
+                </li>
+                <li>
+                    <a href="../livre_d_or.php">Livre d'or</a>
+                </li>
                 {% if isConnected|default(false) %}
-                    <a class="navbar-brand" href="admin_users_list.php">Liste d'utilisateurs</a>
+                    <li>
+                        <a href="../admin_dashboard.php">Tableau de bord</a>
+                    </li>
                 {% endif %}
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="d-flex mr-auto"></div>
-                    <div class="navbar-nav">
-                        <!--<a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>-->
-                        {% if isConnected|default(false) %}
-                            <form action="logout.php" method="post" class="form-inline my-2 my-lg-0">
-                                <input type="submit" class="btn btn-outline-danger my-2 my-sm-0" value="Logout">
-                            </form>
-                        {% else %}
-                            <form action="login.php" method="post" class="form-inline my-2 my-lg-0" style="padding-right: 10px;">
-                                <!--
-                                <input name="email" type="email" class="form-control mr-sm-2" placeholder="Email">
-                                <input name="password" type="password" class="form-control mr-sm-2" placeholder="Password">-->
-                                <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Login">
-                            </form>
-                            <form action="registration.php" method="post" class="form-inline my-2 my-lg-0">
-                                <!--
-                                <input name="email" type="email" class="form-control mr-sm-2" placeholder="Email">
-                                <input name="password" type="password" class="form-control mr-sm-2" placeholder="Password">-->
-                                <input type="submit" class="btn btn-warning my-2 my-sm-0" value="S'inscrire">
-                            </form>
-                        {% endif %}
-                    </div>
+            </ul>
+
+            <div class="nav-burger-div">
+                <div class="addresse-nav">
+                    <svg class="nav-icone" enable-background="new 0 0 430.114 430.114" viewBox="0 0 430.114 430.114" xmlns="http://www.w3.org/2000/svg"><path d="m356.208 107.051c-1.531-5.738-4.64-11.852-6.94-17.205-27.522-66.142-87.657-89.846-136.213-89.846-65.001 0-136.592 43.586-146.15 133.427v18.355c0 .766.264 7.647.639 11.089 5.358 42.816 39.143 88.32 64.375 131.136 27.146 45.873 55.314 90.999 83.221 136.106 17.208-29.436 34.354-59.259 51.17-87.933 4.583-8.415 9.903-16.825 14.491-24.857 3.058-5.348 8.9-10.696 11.569-15.672 27.145-49.699 70.838-99.782 70.838-149.104v-20.262c.001-5.347-6.627-24.081-7-25.234zm-141.963 92.142c-19.107 0-40.021-9.554-50.344-35.939-1.538-4.2-1.414-12.617-1.414-13.388v-11.852c0-33.636 28.56-48.932 53.406-48.932 30.588 0 54.245 24.472 54.245 55.06 0 30.587-25.305 55.051-55.893 55.051z"/></svg>
+                    <p>2 Route de Gambaiseuil,<br>78610, Saint-Léger-en-Yvelines,<br>France</p>
                 </div>
-            </nav>
+                <a href="../mentions_legales.php">Mentions légales</a>
+                {% if isConnected|default(false) %}
+                    <a href="../logout.php" style="color: red;">Se déconnecter</a>
+                {% else %}
+                    <a href="../login.php" style="color: green; font-size: 12px;">Se connecter</a>
+                {% endif %}
+            </div>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.7019263967163!2d1.7620731158007865!3d48.73028697927517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e69fb98301351d%3A0xd7a6c5e99d843d74!2s2+Route+de+Gambaiseuil%2C+78610+Saint-L%C3%A9ger-en-Yvelines!5e0!3m2!1sfr!2sfr!4v1560600735414!5m2!1sfr!2sfr" width="200" height="200" frameborder="0" style="border:0"></iframe>-->
+        </nav>
+        <div class="overlay-burger"></div>
+        </div>
+
         {% endblock %}
     </header>
 
-    <main class="container">
+    <main>
         {% block main %} {% endblock %}
     </main>
 
-    <footer class="container">
+    <footer class="">
         {% block footer %}
             <div class="footer">
-                <p class="small">copyright 2018</p>
+                <svg id="bandeau_footer" data-name="bandeau_footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1190.55 122.95">
+                    <path class="bandeau_footer" d="M1190.55,340.37c-39.59-5.43-387.81,138.47-743.34,0C286.71,277.86,109.68,301.88,0,320.69V423H1190.55V340.37Z" transform="translate(0 -300.01)"/>
+                </svg>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 footer-mg">
+                                <p class="Quicksand_Bold footer-title">Shiatsu78.com</p>
+                                <a href="../img/brochure7.pdf" download="Brochure_Shiatsu78">Télécharger la brochure</a><br>
+                                <a href="../mentions_legales.php">Mentions légales</a><br>
+                                <a href="../contact.php">Contactez-nous</a>
+
+                                <div class="row" style="margin-top: 10px !important;">
+
+                                    <a href="https://www.facebook.com/shiatsu.mc78/" target="_blank" style="margin-top: -4px;">
+                                        <svg version="1.1" class="footer-icones" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;"
+                                             xml:space="preserve">
+                                            <g>
+                                                <path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
+                                                    c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
+                                                    c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
+                                                    c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                        <!--<svg class="footer-icones" enable-background="new 0 0 430.114 430.114" viewBox="0 0 430.114 430.114" xmlns="http://www.w3.org/2000/svg"><path d="m356.208 107.051c-1.531-5.738-4.64-11.852-6.94-17.205-27.522-66.142-87.657-89.846-136.213-89.846-65.001 0-136.592 43.586-146.15 133.427v18.355c0 .766.264 7.647.639 11.089 5.358 42.816 39.143 88.32 64.375 131.136 27.146 45.873 55.314 90.999 83.221 136.106 17.208-29.436 34.354-59.259 51.17-87.933 4.583-8.415 9.903-16.825 14.491-24.857 3.058-5.348 8.9-10.696 11.569-15.672 27.145-49.699 70.838-99.782 70.838-149.104v-20.262c.001-5.347-6.627-24.081-7-25.234zm-141.963 92.142c-19.107 0-40.021-9.554-50.344-35.939-1.538-4.2-1.414-12.617-1.414-13.388v-11.852c0-33.636 28.56-48.932 53.406-48.932 30.588 0 54.245 24.472 54.245 55.06 0 30.587-25.305 55.051-55.893 55.051z"/></svg>
+                                    &nbsp;-->
+                                    <a href="mailto:shiatsu.mc@gmail.com" style="margin-top: -4px;">
+                                        <svg version="1.1" class="footer-icones" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 334.5 334.5" xml:space="preserve">
+                                            <path d="M332.797,13.699c-1.489-1.306-3.608-1.609-5.404-0.776L2.893,163.695c-1.747,0.812-2.872,2.555-2.893,4.481  s1.067,3.693,2.797,4.542l91.833,45.068c1.684,0.827,3.692,0.64,5.196-0.484l89.287-66.734l-70.094,72.1  c-1,1.029-1.51,2.438-1.4,3.868l6.979,90.889c0.155,2.014,1.505,3.736,3.424,4.367c0.513,0.168,1.04,0.25,1.561,0.25  c1.429,0,2.819-0.613,3.786-1.733l48.742-56.482l60.255,28.79c1.308,0.625,2.822,0.651,4.151,0.073  c1.329-0.579,2.341-1.705,2.775-3.087L334.27,18.956C334.864,17.066,334.285,15.005,332.797,13.699z"/>
+                                        </svg>
+                                    </a>
+                                    &nbsp;
+                                        <svg version="1.1" class="footer-icones" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480.56 480.56" xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path d="M365.354,317.9c-15.7-15.5-35.3-15.5-50.9,0c-11.9,11.8-23.8,23.6-35.5,35.6c-3.2,3.3-5.9,4-9.8,1.8    c-7.7-4.2-15.9-7.6-23.3-12.2c-34.5-21.7-63.4-49.6-89-81c-12.7-15.6-24-32.3-31.9-51.1c-1.6-3.8-1.3-6.3,1.8-9.4    c11.9-11.5,23.5-23.3,35.2-35.1c16.3-16.4,16.3-35.6-0.1-52.1c-9.3-9.4-18.6-18.6-27.9-28c-9.6-9.6-19.1-19.3-28.8-28.8    c-15.7-15.3-35.3-15.3-50.9,0.1c-12,11.8-23.5,23.9-35.7,35.5c-11.3,10.7-17,23.8-18.2,39.1c-1.9,24.9,4.2,48.4,12.8,71.3    c17.6,47.4,44.4,89.5,76.9,128.1c43.9,52.2,96.3,93.5,157.6,123.3c27.6,13.4,56.2,23.7,87.3,25.4c21.4,1.2,40-4.2,54.9-20.9    c10.2-11.4,21.7-21.8,32.5-32.7c16-16.2,16.1-35.8,0.2-51.8C403.554,355.9,384.454,336.9,365.354,317.9z"/>
+                                                        <path d="M346.254,238.2l36.9-6.3c-5.8-33.9-21.8-64.6-46.1-89c-25.7-25.7-58.2-41.9-94-46.9l-5.2,37.1    c27.7,3.9,52.9,16.4,72.8,36.3C329.454,188.2,341.754,212,346.254,238.2z"/>
+                                                        <path d="M403.954,77.8c-42.6-42.6-96.5-69.5-156-77.8l-5.2,37.1c51.4,7.2,98,30.5,134.8,67.2c34.9,34.9,57.8,79,66.1,127.5    l36.9-6.3C470.854,169.3,444.354,118.3,403.954,77.8z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        <p class="Quicksand_Bold" style="color: white;">&nbsp;06 11 14 69 27</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="small">Copyright 2019 - Myriam CORRADO</p>
+                </div>
             </div>
         {% endblock %}
     </footer>
 
 {% endblock %}
-
+<!--SmoothScroll-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../src/smoothscroll.js"></script>
+<!--Fin SmoothScroll-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="../src/burgerjs.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

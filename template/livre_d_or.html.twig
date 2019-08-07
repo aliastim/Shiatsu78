@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {% if status|default(false) %}
+    <div class="alert alert-success alert-dismissible fade show fade-alert" role="alert" style="position: absolute; width: calc(100% - 100px); margin-left: 50px; margin-right: 50px;">
+        <strong>Votre commentaire a bien été envoyé !</strong> Il sera publié dès qu'il aura été validé.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+
+    <div class="section">
+        <div class="container">
+            <div class="d-flex">
+                <div class="mr-auto p-2 bd-highlight">
+                    <h1 class="Quicksand_Bold" style="/*margin-top: 70px;*/">Livre d'or</h1>
+                </div>
+                <div class="p-2 bd-highlight">
+                    {% if status == false|default(false) %}
+                    <button type="button" class="btn btn-comment" data-toggle="modal" data-target="#Modal-comment">
+                        Commenter
+                    </button>
+                    {% endif %}
+                </div>
+
+            </div>
+
+
+            <div class="row text-center" style="width: 100%">
+            {% for commentaire in commentaires %}
+                <div class="col-md-4 comments">
+                    <svg class="livre-d-or-quote-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" viewBox="0 0 27.555 27.555" style="enable-background:new 0 0 27.555 27.555;" xml:space="preserve">
+                        <path class="livre-d-or-quote" d="M13.777,0C7.108,0,1.701,5.407,1.701,12.076c0,3.45,1.454,6.553,3.773,8.752L5.07,27.555l5.736-3.787   c0.952,0.241,1.944,0.383,2.971,0.383c6.67,0,12.076-5.406,12.076-12.076C25.854,5.407,20.447,0,13.777,0z M12.61,11.342   c0,1.24-0.258,2.219-0.774,2.936s-1.4,1.352-2.654,1.9l-0.945-1.789c0.771-0.361,1.304-0.722,1.598-1.08   c0.295-0.36,0.459-0.784,0.493-1.273H8.237V7.974h4.373V11.342z M19.317,11.342c0,1.24-0.258,2.219-0.774,2.936   c-0.516,0.719-1.4,1.352-2.654,1.9l-0.944-1.789c0.771-0.361,1.304-0.722,1.599-1.08c0.295-0.36,0.459-0.784,0.493-1.273h-2.091   V7.974h4.373L19.317,11.342L19.317,11.342z"/>
+                    </svg>
+                    <p class="comments-text">{{ commentaire.text }}
+                        <small class="comments-pseudo">{{ commentaire.commenter }}</small>
+                    </p>
+
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% if status == false|default(false) %}
+    <!--
+        <div class="comment-block" >
+        <p class="comment-text">Vous souhaitez partager votre expérience Shiatsu et publier dans le livre d'or ?</p>
+        <div class="container">
+            <form method="post" class="mycomment-form" action="../comment.php">
+                <label for="comment">Votre commentaire :</label>
+                <textarea id="comment" name="comment" class="mycomment" required minlength="10" maxlength="500" placeholder="Ecrivez ici ce que vous avez pensé de votre séance shiatsu ?"></textarea>
+                <label for="commenter">Votre Pseudo :<br></label>
+                <div class="row">
+                    <input id="commenter" name="commenter" class="mypseudo" type="text" required placeholder="Le pseudo apparaitra en dessous du commentaire"/>
+                    <input class="comment-submit" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    -->
+
+    <!--
+    <div class="block-comment">
+        <div class="container">
+            <p>Vous souhaitez partager votre expérience Shiatsu et publier dans le livre d'or ?</p>
+            <form method="post" action="../comment.php">
+                <label for="comment">Votre commentaire :</label>
+                <textarea id="comment" name="comment" required  minlength="10" maxlength="500"></textarea>
+                <label for="commenter">Votre Pseudo :</label>
+                <input id="commenter" name="commenter" type="text" required placeholder="Votre pseudo"/>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    -->
+
+    <div class="modal fade" id="Modal-comment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Écrire un commentaire</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: var(--orange-fonce-1);">&times;</span>
+                    </button>
+                </div>
+                <form method="post" class="mycomment-form" action="../comment.php">
+                    <div class="modal-body">
+                    <label for="comment">Votre commentaire :</label>
+                    <textarea id="comment" name="comment" class="mycomment" required minlength="10" maxlength="500" placeholder="Qu'avez-vous pensé de votre séance shiatsu ?" autofocus></textarea>
+                    <label for="commenter" style="margin-top: 10px;">Votre pseudo :<br></label>
+                    <input id="commenter" name="commenter" class="Modal-pseudo" type="text" required placeholder="Celui-ci apparaîtra en dessous du commentaire."/>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-primary comment-submit-2" type="submit">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+{% endblock %}

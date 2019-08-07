@@ -2,19 +2,22 @@
 
 {% block main %}
 
-    <h1 class="text-center">Création d'Utilisateurs</h1>
+    <div class="container">
+        <h1 class="text-center" style="margin-bottom: 50px;">Création d'Utilisateurs</h1>
 
-    <br><br>
+        <br><br>
 
-    <div class="text-center" style="padding-bottom: 50px;">
-        <form method="post" action="../create_users.php" class="">
-            <input type="text" name="name" class="form-control" placeholder="Votre Nom"><br>
-            <input type="text" name="firstname" class="form-control" placeholder="Votre prénom"><br>
-            <input type="text" name="num" class="form-control" placeholder="Votre Numéro de téléphone"><br>
-            <input type="text" name="mail" class="form-control" placeholder="Votre email"><br>
-            <input type="text" name="password" class="form-control" placeholder="Mot de passe"><br>
+        <div class="text-center" style="padding-bottom: 50px;">
+            <form method="post" action="../create_users.php" class="">
+                <input type="text" name="name" class="form-control" placeholder="Votre Nom"><br>
+                <input type="text" name="firstname" class="form-control" placeholder="Votre prénom"><br>
+                <input type="text" name="num" class="form-control" placeholder="Votre Numéro de téléphone"><br>
+                <input type="text" name="mail" class="form-control" placeholder="Votre email"><br>
+                <input type="text" name="password" class="form-control" placeholder="Mot de passe"><br>
 
-            <input type="submit" class="btn btn-outline-warning" value="Créer un utilisateur">
-        </form>
+                <input type="submit" class="btn btn-outline-warning" value="Créer un utilisateur">
+            </form>
+        </div>
     </div>
+
 {% endblock %}

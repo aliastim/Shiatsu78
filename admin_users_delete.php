@@ -16,9 +16,9 @@ use App\Entity\User;
 if (isset($_SESSION['isConnected']))
 {
 
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
-    if (isset($_GET['id']))
+    if (isset($_POST['id']))
     {
         $repo = $entityManager->getRepository(User::class);
         $user = $repo->find(['id'=>$id]);
